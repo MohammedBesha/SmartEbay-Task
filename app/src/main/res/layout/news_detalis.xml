@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.headline.HeadLineActivity">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.smartepay.news.data.model.NewsDetailsPar" />
+    </data>
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/imgNews"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:loadImage="@{model.urlToImage}"
+                    android:scaleType="centerCrop"
+
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/newsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left|center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@{model.title}"
+                   />
+
+
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@{model.author}"
+               />
+
+
+                <TextView
+                    android:id="@+id/publishedAt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="left"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:drawableStart="@drawable/ic_time"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/textColorLight"
+                    android:text="@{model.publishedAt}"
+                   />
+
+
+
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ece8e8"
+               />
+
+
+                <TextView
+                    android:id="@+id/newsDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="left|center"
+                    android:textSize="14sp"
+                    android:textColor="@color/textColor"
+                    android:text="@{model.description}"
+                   />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+</layout>
